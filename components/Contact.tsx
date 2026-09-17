@@ -86,7 +86,7 @@ export default function Contact() {
   const [error, setError] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormState({
       ...formState,
@@ -114,7 +114,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full py-24 px-6 md:py-32 md:px-12 bg-[var(--color-sand)] text-[var(--color-charcoal)] border-t border-[var(--border-color)] transition-colors duration-800"
+      className="relative w-full py-24 px-6 md:py-32 md:px-12 bg-[var(--color-charcoal)] text-[var(--color-sand)] border-t border-[var(--border-color)] transition-colors duration-800"
     >
       <div className="max-w-7xl mx-auto flex flex-col space-y-16">
         {/* Section Header */}
@@ -126,16 +126,21 @@ export default function Contact() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
         >
           <motion.div variants={headerItemVariants} className="lg:col-span-6">
-            <h2 className="font-syne font-bold text-5xl md:text-7xl uppercase tracking-tighter text-[var(--color-charcoal)]">
+            <h2 className="font-syne font-bold text-5xl md:text-7xl uppercase tracking-tighter text-[var(--color-sand)]">
               Let's Connect /
             </h2>
           </motion.div>
-          <motion.div variants={headerItemVariants} className="lg:col-span-6 lg:pl-12 flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0">
+          <motion.div
+            variants={headerItemVariants}
+            className="lg:col-span-6 lg:pl-12 flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0"
+          >
             <div className="font-inter text-xs tracking-widest text-zinc-500 uppercase shrink-0 pt-1">
               (Contact)
             </div>
             <p className="font-inter text-zinc-700 text-base md:text-lg leading-relaxed">
-              Have a project in mind or want to talk about system architecture, AI pipelines, or development work? Drop a message below or contact me directly via email.
+              Have a project in mind or want to talk about system architecture,
+              AI pipelines, or development work? Drop a message below or contact
+              me directly via email.
             </p>
           </motion.div>
         </motion.div>
@@ -158,7 +163,10 @@ export default function Contact() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
         >
           {/* Direct Details & Social Links (Left) */}
-          <motion.div variants={leftColVariants} className="lg:col-span-5 flex flex-col space-y-10">
+          <motion.div
+            variants={leftColVariants}
+            className="lg:col-span-5 flex flex-col space-y-10"
+          >
             <div className="flex flex-col space-y-3">
               <span className="font-inter text-xs tracking-widest text-zinc-500 uppercase font-semibold">
                 Direct Email
@@ -203,12 +211,16 @@ export default function Contact() {
           >
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
-                <CheckCircle2 size={48} className="text-zinc-800 animate-[scaleIn_0.3s_ease-out]" />
+                <CheckCircle2
+                  size={48}
+                  className="text-zinc-800 animate-[scaleIn_0.3s_ease-out]"
+                />
                 <h3 className="font-syne font-bold text-2xl text-[var(--color-charcoal)]">
                   Message Sent!
                 </h3>
                 <p className="font-inter text-sm text-zinc-600 max-w-sm">
-                  Thank you for reaching out. I have received your message and will get back to you shortly.
+                  Thank you for reaching out. I have received your message and
+                  will get back to you shortly.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}

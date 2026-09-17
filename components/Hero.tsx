@@ -92,7 +92,7 @@ export default function Hero() {
     : "-- --- ----";
 
   const handleSpherePointerMove = (
-    event: React.PointerEvent<HTMLDivElement>
+    event: React.PointerEvent<HTMLDivElement>,
   ) => {
     if (shouldReduceMotion || event.pointerType !== "mouse") {
       return;
@@ -312,26 +312,18 @@ export default function Hero() {
             >
               <motion.div
                 animate={{
-                  rotateY: shouldReduceMotion ? 0 : 360,
-                  y: shouldReduceMotion ? 0 : [0, -7, 0, 7, 0],
+                  rotate: shouldReduceMotion ? 0 : 360,
                 }}
                 transition={{
-                  rotateY: {
-                    duration: 26,
-                    repeat: Infinity,
-                    ease: "linear",
-                  },
-                  y: {
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  },
+                  duration: 16,
+                  repeat: Infinity,
+                  ease: "linear",
                 }}
-                className="flex h-full w-full items-center justify-center [transform-style:preserve-3d] transform-gpu"
+                className="flex h-full w-full items-center justify-center transform-gpu"
               >
                 <Image
                   src="/ref.jpg"
-                  alt="Futuristic black 3D technology sphere"
+                  alt="Futuristic black technology sphere"
                   width={620}
                   height={820}
                   priority
@@ -381,7 +373,7 @@ export default function Hero() {
           href="#services"
           className="hover:text-[var(--color-charcoal)] transition-colors duration-300 flex items-center space-x-1"
         >
-          <span>SCROLL DOWN</span>
+          <span>SCROLL DOWN</span>service
           <span className="animate-bounce">↓</span>
         </a>
       </div>

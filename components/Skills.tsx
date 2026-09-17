@@ -27,7 +27,10 @@ const itemVariants = {
 };
 
 const dividerVariants = {
-  hidden: { scaleX: 0, opacity: 0 },
+  hidden: {
+    scaleX: 0,
+    opacity: 0,
+  },
   visible: {
     scaleX: 1,
     opacity: 1,
@@ -96,68 +99,243 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative w-full py-24 px-6 md:py-36 md:px-12 bg-[var(--color-charcoal)] text-[var(--color-sand)] transition-colors duration-800 overflow-hidden"
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[var(--color-charcoal)]
+        text-[var(--color-sand)]
+        px-6
+        py-24
+        transition-colors
+        duration-800
+        md:px-12
+        md:py-32
+        lg:py-36
+      "
     >
-      <div className="max-w-7xl mx-auto flex flex-col space-y-16">
-        {/* Main Grid: Left Oversized Editorial Title vs Right Skills Section */}
+      <div className="mx-auto max-w-7xl">
+        {/* =========================================================
+            MAIN LAYOUT
+            LEFT  → DEVELOPER / DESIGNER / CREATOR
+            RIGHT → CAPABILITIES / SKILLS
+        ========================================================= */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-10% 0px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
+          viewport={{
+            once: true,
+            margin: "-10% 0px",
+          }}
+          className="
+            grid
+            grid-cols-1
+            items-start
+            gap-16
+            lg:grid-cols-12
+            lg:gap-10
+          "
         >
-          {/* Left Side: Massive Stacked Typography DEVELOPER / DESIGNER / CREATOR/ */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 flex flex-col space-y-1">
-            <span className="font-syne font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-white leading-[0.88] block">
-              DEVELOPER
-            </span>
-            <span className="font-syne font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-zinc-500 leading-[0.88] block">
-              DESIGNER
-            </span>
-            <span className="font-syne font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter text-white leading-[0.88] block">
-              CREATOR/
-            </span>
+          {/* =======================================================
+              LEFT — EDITORIAL TYPOGRAPHY
+          ======================================================= */}
+          <motion.div
+            variants={itemVariants}
+            className="
+              min-w-0
+              lg:col-span-6
+            "
+          >
+            <div className="text-left">
+              {/* DEVELOPER */}
+              <span
+                className="
+                  block
+                  whitespace-nowrap
+                  font-syne
+                  text-[clamp(2.75rem,5vw,5.2rem)]
+                  font-extrabold
+                  uppercase
+                  leading-[0.84]
+                  tracking-[-0.06em]
+                  text-white
+                "
+              >
+                DEVELOPER
+              </span>
+
+              {/* DESIGNER */}
+              <span
+                className="
+                  block
+                  whitespace-nowrap
+                  font-syne
+                  text-[clamp(2.75rem,5vw,5.2rem)]
+                  font-extrabold
+                  uppercase
+                  leading-[0.84]
+                  tracking-[-0.06em]
+                  text-zinc-500
+                "
+              >
+                DESIGNER
+              </span>
+
+              {/* CREATOR */}
+              <span
+                className="
+                  block
+                  whitespace-nowrap
+                  font-syne
+                  text-[clamp(2.75rem,5vw,5.2rem)]
+                  font-extrabold
+                  uppercase
+                  leading-[0.84]
+                  tracking-[-0.06em]
+                  text-white
+                "
+              >
+                CREATOR
+              </span>
+            </div>
           </motion.div>
 
-          {/* Right Side: Large Heading + 3 Skill Columns */}
-          <div className="lg:col-span-7 flex flex-col space-y-12">
-            <motion.div variants={itemVariants} className="flex flex-col space-y-3">
-              <span className="font-inter text-xs tracking-widest text-zinc-500 uppercase font-semibold">
+          {/* =======================================================
+              RIGHT — CAPABILITIES
+          ======================================================= */}
+          <div
+            className="
+              min-w-0
+              lg:col-span-6
+            "
+          >
+            {/* =====================================================
+                SECTION HEADING
+            ===================================================== */}
+            <motion.div variants={itemVariants} className="flex flex-col gap-3">
+              <span
+                className="
+                  font-inter
+                  text-[10px]
+                  font-semibold
+                  uppercase
+                  tracking-[0.2em]
+                  text-zinc-500
+                  sm:text-xs
+                "
+              >
                 (Capabilities)
               </span>
-              <h2 className="font-syne font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight text-white uppercase">
+
+              <h2
+                className="
+                  font-syne
+                  text-4xl
+                  font-bold
+                  uppercase
+                  leading-none
+                  tracking-tight
+                  text-white
+                  sm:text-5xl
+                  md:text-6xl
+                "
+              >
                 Skills
               </h2>
             </motion.div>
 
-            {/* Divider Line */}
+            {/* =====================================================
+                DIVIDER
+            ===================================================== */}
             <motion.div
               variants={dividerVariants}
-              className="w-full h-[1px] bg-zinc-800 origin-left"
+              className="
+                mt-8
+                h-px
+                w-full
+                origin-left
+                bg-zinc-800
+              "
             />
 
-            {/* 3 Columns Layout (No Cards) */}
+            {/* =====================================================
+                THREE COLUMNS
+            ===================================================== */}
             <motion.div
               variants={containerVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-2"
+              className="
+                mt-8
+                grid
+                grid-cols-1
+                gap-10
+                sm:grid-cols-3
+                sm:gap-6
+                lg:gap-8
+              "
             >
               {columns.map((col) => (
-                <motion.div key={col.title} variants={itemVariants} className="flex flex-col space-y-6">
-                  {/* Column Header */}
-                  <h3 className="font-syne font-bold text-lg md:text-xl text-white tracking-tight border-b border-zinc-800 pb-3">
+                <motion.div
+                  key={col.title}
+                  variants={itemVariants}
+                  className="
+                    min-w-0
+                    flex
+                    flex-col
+                    gap-5
+                  "
+                >
+                  {/* COLUMN TITLE */}
+                  <h3
+                    className="
+                      border-b
+                      border-zinc-800
+                      pb-3
+                      font-syne
+                      text-base
+                      font-bold
+                      leading-tight
+                      tracking-tight
+                      text-white
+                      md:text-lg
+                    "
+                  >
                     {col.title}
                   </h3>
 
-                  {/* Skills List */}
-                  <ul className="flex flex-col space-y-2.5">
+                  {/* SKILL LIST */}
+                  <ul className="flex flex-col gap-2.5">
                     {col.skills.map((skill) => (
                       <li
                         key={skill}
-                        className="font-inter text-sm md:text-base text-zinc-400 hover:text-white transition-colors duration-200 cursor-default flex items-center space-x-2"
+                        className="
+                          flex
+                          items-start
+                          gap-2
+                          font-inter
+                          text-sm
+                          leading-relaxed
+                          text-zinc-400
+                          transition-colors
+                          duration-200
+                          hover:text-white
+                          md:text-[15px]
+                        "
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-zinc-700 shrink-0" />
-                        <span>{skill}</span>
+                        {/* BULLET */}
+                        <span
+                          className="
+                            mt-[0.55rem]
+                            h-1.5
+                            w-1.5
+                            shrink-0
+                            rounded-full
+                            bg-zinc-700
+                          "
+                        />
+
+                        {/* TEXT */}
+                        <span className="min-w-0">{skill}</span>
                       </li>
                     ))}
                   </ul>

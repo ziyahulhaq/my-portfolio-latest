@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent, useMotionTemplate } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+  useMotionTemplate,
+} from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
 interface ServiceItem {
@@ -17,35 +24,60 @@ const servicesData: ServiceItem[] = [
     title: "Software Development",
     description:
       "I focus on solving complex problems and turning logical ideas into simple, working solutions. I apply software engineering principles to build robust, modular, and maintainable software systems.",
-    points: ["JavaScript & TypeScript (ES6+)", "Git & CI/CD Pipelines", "Docker & Containerization", "Linux Command Line & Scripting"],
+    points: [
+      "JavaScript & TypeScript (ES6+)",
+      "Git & CI/CD Pipelines",
+      "Docker & Containerization",
+      "Linux Command Line & Scripting",
+    ],
   },
   {
     num: "(02)",
     title: "Full-Stack Web Development",
     description:
       "Building complete, end-to-end web applications with modern frameworks and robust data architectures. Delivering high-performance interfaces coupled with fast, secure server logic.",
-    points: ["React 19 & Next.js", "Vite & Modern Tooling", "Tailwind CSS v4", "State Management & Routing"],
+    points: [
+      "React 19 & Next.js",
+      "Vite & Modern Tooling",
+      "Tailwind CSS v4",
+      "State Management & Routing",
+    ],
   },
   {
     num: "(03)",
     title: "AI / RAG Development",
     description:
       "Designing AI-powered systems, retrieval-augmented generation (RAG) pipelines, and semantic search interfaces. Creating intelligent chat systems with context isolation and automatic retry mechanisms.",
-    points: ["OpenAI & Gemini API Integrations", "Pinecone Vector Databases", "Semantic Chunking & Embedding Pipelines", "GROQ SDK & LLM Orchestration"],
+    points: [
+      "OpenAI & Gemini API Integrations",
+      "Pinecone Vector Databases",
+      "Semantic Chunking & Embedding Pipelines",
+      "GROQ SDK & LLM Orchestration",
+    ],
   },
   {
     num: "(04)",
     title: "Backend & API Development",
     description:
       "Creating scalable API architectures, security mechanisms, and database management solutions. Designing secure, high-throughput routing, caching, and role-based access control.",
-    points: ["Node.js & Express.js 5", "REST APIs & WebSockets", "Prisma ORM & Mongoose", "PostgreSQL & MongoDB Schemas"],
+    points: [
+      "Node.js & Express.js 5",
+      "REST APIs & WebSockets",
+      "Prisma ORM & Mongoose",
+      "PostgreSQL & MongoDB Schemas",
+    ],
   },
   {
     num: "(05)",
     title: "UI / Frontend Development",
     description:
       "Crafting beautiful, accessible, and responsive user interfaces with smooth motion, transitions, and polished micro-interactions. Turning design files into pixel-perfect code.",
-    points: ["Tailwind CSS v4", "Framer Motion Animations", "Shadcn UI & Radix Primitives", "Styled Components & CSS Variables"],
+    points: [
+      "Tailwind CSS v4",
+      "Framer Motion Animations",
+      "Shadcn UI & Radix Primitives",
+      "Styled Components & CSS Variables",
+    ],
   },
 ];
 
@@ -204,17 +236,49 @@ export default function Services() {
   const yTrans0 = useTransform(scrollYProgress, [0.0, 1.0], [0, 0]);
   const op0 = useTransform(scrollYProgress, [0.0, 1.0], [1, 1]);
 
-  const yTrans1 = useTransform(scrollYProgress, [0.0, 0.12, 0.22, 1.0], [150, 150, 0, 0]);
-  const op1 = useTransform(scrollYProgress, [0.0, 0.12, 0.22, 1.0], [0, 0, 1, 1]);
+  const yTrans1 = useTransform(
+    scrollYProgress,
+    [0.0, 0.12, 0.22, 1.0],
+    [150, 150, 0, 0],
+  );
+  const op1 = useTransform(
+    scrollYProgress,
+    [0.0, 0.12, 0.22, 1.0],
+    [0, 0, 1, 1],
+  );
 
-  const yTrans2 = useTransform(scrollYProgress, [0.0, 0.34, 0.44, 1.0], [150, 150, 0, 0]);
-  const op2 = useTransform(scrollYProgress, [0.0, 0.34, 0.44, 1.0], [0, 0, 1, 1]);
+  const yTrans2 = useTransform(
+    scrollYProgress,
+    [0.0, 0.34, 0.44, 1.0],
+    [150, 150, 0, 0],
+  );
+  const op2 = useTransform(
+    scrollYProgress,
+    [0.0, 0.34, 0.44, 1.0],
+    [0, 0, 1, 1],
+  );
 
-  const yTrans3 = useTransform(scrollYProgress, [0.0, 0.56, 0.66, 1.0], [150, 150, 0, 0]);
-  const op3 = useTransform(scrollYProgress, [0.0, 0.56, 0.66, 1.0], [0, 0, 1, 1]);
+  const yTrans3 = useTransform(
+    scrollYProgress,
+    [0.0, 0.56, 0.66, 1.0],
+    [150, 150, 0, 0],
+  );
+  const op3 = useTransform(
+    scrollYProgress,
+    [0.0, 0.56, 0.66, 1.0],
+    [0, 0, 1, 1],
+  );
 
-  const yTrans4 = useTransform(scrollYProgress, [0.0, 0.78, 0.88, 1.0], [150, 150, 0, 0]);
-  const op4 = useTransform(scrollYProgress, [0.0, 0.78, 0.88, 1.0], [0, 0, 1, 1]);
+  const yTrans4 = useTransform(
+    scrollYProgress,
+    [0.0, 0.78, 0.88, 1.0],
+    [150, 150, 0, 0],
+  );
+  const op4 = useTransform(
+    scrollYProgress,
+    [0.0, 0.78, 0.88, 1.0],
+    [0, 0, 1, 1],
+  );
 
   const y0 = useMotionTemplate`calc(${0 * rowHeight}px + ${yTrans0}px)`;
   const y1 = useMotionTemplate`calc(${1 * rowHeight}px + ${yTrans1}px)`;
@@ -247,15 +311,21 @@ export default function Services() {
           >
             <motion.div variants={headerItemVariants} className="lg:col-span-6">
               <h2 className="font-syne font-bold text-5xl md:text-7xl uppercase tracking-tighter text-white">
-                What I Do /
+                What I Do
               </h2>
             </motion.div>
-            <motion.div variants={headerItemVariants} className="lg:col-span-6 lg:pl-12 flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0">
+            <motion.div
+              variants={headerItemVariants}
+              className="lg:col-span-6 lg:pl-12 flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0"
+            >
               <div className="font-inter text-xs tracking-widest text-zinc-500 uppercase shrink-0 pt-1">
                 (Services)
               </div>
               <p className="font-inter text-zinc-400 text-base md:text-lg leading-relaxed">
-                I specialize in building full-stack web applications, AI-powered systems, scalable backend architectures, and responsive user experiences. I help turn complex challenges into clean, production-ready code.
+                I specialize in building full-stack web applications, AI-powered
+                systems, scalable backend architectures, and responsive user
+                experiences. I help turn complex challenges into clean,
+                production-ready code.
               </p>
             </motion.div>
           </motion.div>
@@ -392,15 +462,21 @@ export default function Services() {
           >
             <motion.div variants={headerItemVariants} className="lg:col-span-7">
               <h2 className="font-syne font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-white leading-none">
-                What I Do /
+                What I Do
               </h2>
             </motion.div>
-            <motion.div variants={headerItemVariants} className="lg:col-span-5 lg:pl-6 flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+            <motion.div
+              variants={headerItemVariants}
+              className="lg:col-span-5 lg:pl-6 flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0"
+            >
               <div className="font-inter text-xs tracking-widest text-zinc-500 uppercase shrink-0 pt-1">
                 (Services)
               </div>
               <p className="font-inter text-zinc-400 text-base md:text-lg leading-relaxed">
-                I specialize in building full-stack web applications, AI-powered systems, scalable backend architectures, and responsive user experiences. I help turn complex challenges into clean, production-ready code.
+                I specialize in building full-stack web applications, AI-powered
+                systems, scalable backend architectures, and responsive user
+                experiences. I help turn complex challenges into clean,
+                production-ready code.
               </p>
             </motion.div>
           </motion.div>
