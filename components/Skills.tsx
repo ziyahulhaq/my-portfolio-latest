@@ -132,9 +132,11 @@ export default function Skills() {
             grid
             grid-cols-1
             items-start
-            gap-16
+            gap-12
             lg:grid-cols-12
-            lg:gap-10
+            lg:gap-x-16
+            lg:gap-y-12
+            xl:gap-x-20
           "
         >
           {/* =======================================================
@@ -144,7 +146,7 @@ export default function Skills() {
             variants={itemVariants}
             className="
               min-w-0
-              lg:col-span-6
+              lg:col-span-12
             "
           >
             <div className="text-left">
@@ -154,11 +156,11 @@ export default function Skills() {
                   block
                   whitespace-nowrap
                   font-syne
-                  text-[clamp(2.75rem,5vw,5.2rem)]
+                  text-[clamp(2.75rem,4vw,4.35rem)]
                   font-extrabold
                   uppercase
                   leading-[0.84]
-                  tracking-[-0.06em]
+                  tracking-normal
                   text-white
                 "
               >
@@ -171,11 +173,11 @@ export default function Skills() {
                   block
                   whitespace-nowrap
                   font-syne
-                  text-[clamp(2.75rem,5vw,5.2rem)]
+                  text-[clamp(2.75rem,4vw,4.35rem)]
                   font-extrabold
                   uppercase
                   leading-[0.84]
-                  tracking-[-0.06em]
+                  tracking-normal
                   text-zinc-500
                 "
               >
@@ -188,11 +190,11 @@ export default function Skills() {
                   block
                   whitespace-nowrap
                   font-syne
-                  text-[clamp(2.75rem,5vw,5.2rem)]
+                  text-[clamp(2.75rem,4vw,4.35rem)]
                   font-extrabold
                   uppercase
                   leading-[0.84]
-                  tracking-[-0.06em]
+                  tracking-normal
                   text-white
                 "
               >
@@ -207,7 +209,8 @@ export default function Skills() {
           <div
             className="
               min-w-0
-              lg:col-span-6
+              lg:col-start-6
+              lg:col-span-7
             "
           >
             {/* =====================================================
@@ -235,7 +238,7 @@ export default function Skills() {
                   font-bold
                   uppercase
                   leading-none
-                  tracking-tight
+                  tracking-normal
                   text-white
                   sm:text-5xl
                   md:text-6xl
@@ -295,7 +298,7 @@ export default function Skills() {
                       text-base
                       font-bold
                       leading-tight
-                      tracking-tight
+                      tracking-normal
                       text-white
                       md:text-lg
                     "
